@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de numeros romanos</title>
+    <link rel="stylesheet" href="estilo1.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Conversor de número arábico para romano ou vice-versa</h1>
+    </header>
+    <section class="container">
+      <div id="dados">
+        <p>
+          Insira o valor em número arábico <strong>OU</strong> romano para ser
+          convertido: <br />
+          <input type="text" oninput="value = value.toUpperCase()" id="txt" />
+          <input type="button" value="Converter" onclick="verify()" />
+        </p>
+        <p></p>
+      </div>
+      <div id="res"></div>
+    </section>
+    <footer>
+      <p>&copy; Matheus</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
