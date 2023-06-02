@@ -40,32 +40,15 @@ function verify() {
         }
       }
       if (num >= 4000) return alert("O número é maior que 3999.");
-      function stringVerify(value, nonRomletter) {
-        var regex = new RegExp(`[${nonRomletter}]`, "i");
-
-        if (regex.test(value)) {
-          return alert("Erro: A string contém letras proibidas!");
-        } else if (/IIII/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/VVVV/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/XXXX/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/LLLL/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/CCCC/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/DDDD/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else if (/MMMM/.test(value)) {
-          return alert("A letra não pode ser repetida mais de três vezes!");
-        } else {
-          res.innerHTML = `O número romano <strong>${t}</strong> em arábico é igual a <strong>${num}</strong>.`;
-        }
+      if (/[ABEFGHJKNOPQRSTUWYZ]/.test(value)) {
+        return alert("Erro: A string contém letras proibidas!");
+      } else if (/\d/.test(value)) {
+        return alert("O valor inserido é inválido!");
+      } else if (/IIII|VVVV|XXXX|LLLL|CCCC|DDDD|MMMM/.test(value)) {
+        return alert("A letra não pode ser repetida mais de três vezes!");
+      } else {
+        res.innerHTML = `O número romano <strong>${t}</strong> em arábico é igual a <strong>${num}</strong>.`;
       }
-      stringVerify(value, "ABEFGHJKNOPQRSTUWYZ");
-      var hasNumber = /\d/;
-      if (hasNumber.test(value)) return alert("O valor inserido é inválido!");
     }
     roman_to_Int();
   } else {
